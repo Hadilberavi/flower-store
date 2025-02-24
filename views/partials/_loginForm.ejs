@@ -1,0 +1,14 @@
+<% if (!username){ %>
+    <form action="/login" method="POST" class="login-form">
+        <h3>login form</h3>
+        <input type="email" name="email" placeholder="enter your email" class="box" />
+        <input type="password" name="password" placeholder="enter your password" class="box" />
+        <div class="remember">
+            <input type="checkbox" name="" id="remember-me" />
+            <label for="remember-me">remember me</label>
+        </div>
+        <input type="submit" value="login now" class="btn" />
+        <p>don't have an account? <a href="/Register">create one</a></p>
+    </form>
+
+    <% } %>

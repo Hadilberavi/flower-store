@@ -1,0 +1,49 @@
+<%- include("layout/_head") %>
+  <!-- header -->
+  <%- include("partials/_header") %>
+
+    <!-- contact -->
+    <div class="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="titlepage text_align_center">
+              <h2>Register</h2>
+            </div>
+          </div>
+          <div class="col-md-8 offset-md-2">
+            <form id="request" class="main_form" action="/register" method="POST">
+              <div class="row">
+                <div class="col-md-12">
+                  <input class="form_control" placeholder="Username" type="text" name="username" />
+                </div>
+                <div class="col-md-12">
+                  <div style="display: none" class="alert alert-danger" id="username"></div>
+                </div>
+                <div class="col-md-12">
+                  <input class="form_control" placeholder="Email" type="text" name="email" />
+                </div>
+                <div class="col-md-12">
+                  <div style="display: none" class="alert alert-danger" id="email"></div>
+                </div>
+                <div class="col-md-12">
+                  <input class="form_control" placeholder="Password" type="password" name="password" />
+                </div>
+                <div class="col-md-12">
+                  <div style="display: none" class="alert alert-danger" id="password"></div>
+                </div>
+                <div class="col-md-12">
+                  <div class="group_form">
+                    <button class="send_btn">Register</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="gallery"></section>
+    <!-- footer section start-->
+    <%- include("layout/_footer") %>

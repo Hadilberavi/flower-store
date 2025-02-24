@@ -1,0 +1,43 @@
+<header class="header">
+  <!-- App Logo  -->
+  <a href="index.html" class="logo">
+    <img src="/images/Flower-Logo.png" alt="" />
+    <span>flower trend</span>
+  </a>
+
+  <!--  Nav bar  -->
+  <div class="navbar">
+    <a href="/" class="<%= link === 'index' && 'active' %>">home</a>
+    <a href="/shop" class="<%= link === 'shop' && 'active' %>">shop</a>
+    <a href="/about" class="<%= link === 'about' && 'active' %>">about</a>
+    <a href="/review" class="<%= link === 'review' && 'active' %>">review</a>
+    <a href="/blog" class="<%= link === 'blog' && 'active' %>">blog</a>
+    <a href="/contact" class="<%= link === 'contact' && 'active' %>">contact us</a>
+  </div>
+
+  <!-- Mobile Nav bar  -->
+  <div class="navbar mobile">
+    <a href="/" class="active">home</a>
+    <a href="/shop" class="">shop</a>
+    <a href="/about">about</a>
+    <a href="/review" class="">review</a>
+    <a href="/blog" class="">blog</a>
+    <a href="/contact" class="">contact us</a>
+  </div>
+
+  <!-- Header icons -->
+  <div class="header-icons">
+    <div class="icons">
+      <div id="search-btn" class="fas fa-search"></div>
+      <div id="cart-btn" class="fas fa-shopping-cart"></div>
+      <% if(!username){ %>
+        <div id="login-btn" class="fas fa-user"></div>
+        <% } else{ %>
+          <form action="/logout" method="POST" style="display: inline-block;">
+            <button type="submit" class="fas fa-sign-out-alt " style="border: none;background: none;"></button>
+          </form>
+          <% } %>
+    </div>
+    <div id="menu-btn" class="fas fa-bars"></div>
+  </div>
+</header>

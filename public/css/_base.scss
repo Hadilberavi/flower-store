@@ -1,0 +1,206 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+html {
+  scroll-behavior: smooth; // esnetik kaydirma sekli
+  scroll-padding-top: 6rem;
+}
+
+body {
+  /* Header için yeterli üst boşluk bırakın */
+  padding: 5rem 0 0;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: $box-shadow;
+  padding: 20px;
+
+  .navbar {
+    display: none;
+    position: relative;
+
+    @include tablet {
+      display: block;
+    }
+
+    a {
+      padding: 0.5rem;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      color: $pinkColor;
+      border-radius: 0.2rem;
+      transition: 0.2s ease-in-out all;
+
+      &:hover {
+        background: $pinkColor;
+        color: white;
+      }
+
+      &.active {
+        background: $pinkColor;
+        color: white;
+      }
+    }
+
+    &.mobile {
+      padding: 0;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      overflow: hidden;
+      top: 100%;
+      right: 0;
+      left: 0;
+      max-height: 0;
+      background: white;
+      box-shadow: $box-shadow;
+      transition: 0.2s ease-in-out all;
+
+      @include tablet {
+        display: none;
+      }
+
+      &.active {
+        max-height: 300px;
+      }
+    }
+  }
+
+  .header-icons {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+
+    #menu-btn {
+      font-size: 1.5rem;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 3rem 1rem;
+  background-color: #ffeaf0;
+  border-top: 2px solid $pinkColor;
+
+  @include desktop {
+    padding: 3rem 10rem;
+  }
+
+  .box-container {
+    @include grid(5rem, 3, 0.2rem);
+
+    @include tablet {
+      @include grid(1rem, 5, 1rem);
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      a {
+        color: $light-color;
+        text-decoration: none;
+        font-size: 0.9rem;
+
+        i {
+          font-size: 0.8rem;
+        }
+
+        &:hover {
+          color: white;
+        }
+      }
+
+      &:last-child {
+        padding: 2rem 0;
+        grid-column: 1/4;
+
+        @include tablet {
+          grid-column: 4/6;
+          padding: 0;
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+
+          @include mobile {
+            flex-direction: row;
+            gap: 1rem;
+          }
+
+          @include tablet {
+            flex-direction: column;
+            gap: 0;
+          }
+
+          input {
+            padding: 1.5rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+            @include mobile {
+              padding: 1rem;
+              width: 100%;
+            }
+          }
+
+          button {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 0.5rem;
+            box-shadow: $box-shadow;
+            background: $pinkColor;
+            color: white;
+            cursor: pointer;
+            font-size: 1.4rem;
+
+            @include mobile {
+              padding: 0.5rem;
+              font-size: 1rem;
+            }
+
+            &:hover {
+              background: $light-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

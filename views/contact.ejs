@@ -1,0 +1,111 @@
+<%- include("layout/_head") %>
+<!-- header -->
+<%- include("partials/_header") %>
+
+<div class="heading">
+  <h1 class="oswald-font">contact us</h1>
+  <p><a href="index.html">HOME > </a>contact</p>
+</div>
+
+<section class="contact">
+  <div class="icons-container">
+    <div class="icons">
+      <i class="fas fa-phone"></i>
+      <h3 class="oswald-font">our number</h3>
+      <p>+123 456 789</p>
+      <p>+111 222 555</p>
+    </div>
+    <div class="icons">
+      <i class="fas fa-envelope"></i>
+      <h3 class="oswald-font">our email</h3>
+      <p>hadel@gmail.com</p>
+      <p>flotrend@gmail.com</p>
+    </div>
+    <div class="icons">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3 class="oswald-font">our address</h3>
+      <p>istanbul- turkey- kadikoy</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <form action="/contact" method="post">
+      <h3>get in touch</h3>
+      <div class="inputbox">
+        <input
+          type="text"
+          name="name"
+          placeholder="enter your name"
+          class="box"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="enter your email"
+          class="box"
+        />
+      </div>
+      <div class="inputbox">
+        <input
+          type="number"
+          name="number"
+          placeholder="enter your number"
+          class="box"
+        />
+        <input
+          type="text"
+          name="subject"
+          placeholder="enter your subject"
+          class="box"
+        />
+      </div>
+      <textarea placeholder="your massage" cols="30" rows="10"></textarea>
+      <input type="submit" value="send message" class="btn" />
+    </form>
+    <% if (result) { %>
+    <div
+      id="result-message"
+      style="
+        text-align: center;
+        top: 6rem;
+        left: 50%;
+        width: 100%;
+        z-index: 100;
+      "
+    >
+      <div
+        class="result-container"
+        style="
+          background-color: #ff0073;
+          color: white;
+          padding: 1rem;
+          border-radius: 1rem;
+          max-width: 50%;
+          margin: auto;
+        "
+      >
+        <span><%= result %></span>
+      </div>
+    </div>
+
+    <script>
+      // Mesajın 3 saniye sonra kaybolmasını sağla
+      setTimeout(function () {
+        document.getElementById("result-message").style.display = "none";
+      }, 3000); // 3000 ms = 3 saniye
+    </script>
+    <% } %>
+
+    <iframe
+      class="map"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3218.6949450438865!2d36.156123560884375!3d36.22260897253227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1525c240895d77d3%3A0x7e7aed3c00abce7e!2zU8SwQkVMxLBTQSBVTFVTTEFSQVJBU0kgw4fEsMOHRUvDh8SwTMSwSyBhbnRha3lh!5e0!3m2!1sar!2str!4v1722171448127!5m2!1sar!2str"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</section>
+<!-- footer section start-->
+<%- include("layout/_footer") %>

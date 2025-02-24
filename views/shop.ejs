@@ -1,0 +1,75 @@
+<%- include("layout/_head") %>
+<!-- header -->
+<%- include("partials/_header") %>
+
+<div class="heading">
+  <h1 class="oswald-font">Flower Shop</h1>
+  <p><a href="index.html">HOME > </a>shop</p>
+</div>
+
+<div class="category">
+  <h1 class="title">
+    <span>Categories</span>
+    <a href="#"> view all >></a>
+  </h1>
+
+  <div class="box-container">
+    <a class="box">
+      <img alt="" src="/images/tulip_11446515.png" />
+      <h3>tulips</h3>
+    </a>
+
+    <a class="box">
+      <img alt="" src="/images/nature_14756772.png" />
+      <h3>carnations</h3>
+    </a>
+
+    <a class="box">
+      <img alt="" src="/images/flower_13706327.png" />
+      <h3>chrysanthemums</h3>
+    </a>
+
+    <a class="box">
+      <img alt="" src="/images/tulip_6164956.png" />
+      <h3>roses</h3>
+    </a>
+  </div>
+</div>
+
+<section class="products">
+  <h1 class="title">
+    <span>Products</span>
+    <a href="#"> view all >></a>
+  </h1>
+
+  <div class="box-container">
+    <%- include("components/_shopItem", { image: "/images/product2.jpg" , title:
+    "Rose Bouquet" , price: "$120.0" , stars: 4 }) %> <%-
+    include("components/_shopItem", { image: "/images/product3.jpg" , title:
+    "Tulip Garden" , price: "$90.0" , stars: 5 }) %> <%-
+    include("components/_shopItem", { image: "/images/product33.jpg" , title:
+    "Sunflower Delight" , price: "$75.0" , stars: 4 }) %> <%-
+    include("components/_shopItem", { image: "/images/product5.jpg" , title:
+    "Orchid Elegance" , price: "$200.0" , stars: 5 }) %> <%-
+    include("components/_shopItem", { image: "/images/product6.jpg" , title:
+    "Daisy Dreams" , price: "$60.0" , stars: 3 }) %> <%-
+    include("components/_shopItem", { image: "/images/product7.jpg" , title:
+    "Lily Love" , price: "$150.0" , stars: 5 }) %> <%-
+    include("components/_shopItem", { image: "/images/product8.jpg" , title:
+    "Carnation Charm" , price: "$80.0" , stars: 4 }) %> <%-
+    include("components/_shopItem", { image: "/images/product9.jpg" , title:
+    "Peony Perfection" , price: "$180.0" , stars: 5 }) %> <%-
+    include("components/_shopItem", { image: "/images/product33.jpg" , title:
+    "Lavender Bliss" , price: "$70.0" , stars: 4 }) %> <%-
+    include("components/_shopItem", { image: "/images/product22.jpg" , title:
+    "Hydrangea Harmony" , price: "$110.0" , stars: 5 }) %> <%-
+    include("components/_shopItem", { image: "/images/product99.jpg" , title:
+    "Gardenia Grace" , price: "$130.0" , stars: 4 }) %> <%-
+    include("components/_shopItem", { image: "/images/product999.jpg" , title:
+    "Iris Inspiration" , price: "$95.0" , stars: 3 }) %> <%-
+    include("components/_shopItem", { image: "/images/product3.jpg" , title:
+    "Marigold Magic" , price: "$85.0" , stars: 4 }) %>
+  </div>
+</section>
+<!-- footer section start-->
+<%- include("layout/_footer") %>

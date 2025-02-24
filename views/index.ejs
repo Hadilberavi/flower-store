@@ -1,0 +1,102 @@
+<%- include("layout/_head") %>
+<!-- header -->
+<%- include("partials/_header") %>
+
+<!-- Carousel -->
+<div class="carousel slide" id="bit" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#bit"
+      data-bs-slide-to="0"
+      class="active"
+    ></button>
+    <button type="button" data-bs-target="#bit" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#bit" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/slide1.jpg" width="100%" height="450px" alt="" />
+      <div class="carousel-caption">
+        <span>flowers make memories!</span>
+        <h3>flowers and birthday gift</h3>
+        <a
+          href="shop.html"
+          class="btn btn-primary"
+          style="background-color: #e72463"
+          >shop now</a
+        >
+      </div>
+      <!-- <div class="carousel-caption">
+      </div> -->
+    </div>
+    <div class="carousel-item">
+      <img src="/images/flo5.jpg" width="100%" height="450px" alt="" />
+      <div class="carousel-caption">
+        <span>flowers from the heart</span>
+        <h3>flowers and birthday gift</h3>
+        <a href="shop.html" class="btn btn-primary">shop now</a>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/images/slide3.jpg" width="100%" height="450px" alt="" />
+      <div class="carousel-caption">
+        <span>flowers make memories!</span>
+        <h3>find your own happines</h3>
+        <a href="shop.html" class="btn btn-primary">shop now</a>
+      </div>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="carousel-control-next"
+    data-bs-slide="next"
+    data-bs-target="#bit"
+  >
+    <span class="carousel-control-next-icon"></span>
+  </button>
+  <button
+    type="button"
+    class="carousel-control-prev"
+    data-bs-slide="prev"
+    data-bs-target="#bit"
+  >
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+</div>
+
+<!-- Homepage banner cards  -->
+<section class="banner-container">
+  <div class="banner">
+    <img src="/images/blog3.jpg" alt="" />
+    <div class="content">
+      <span>limitid sales</span>
+      <h3>-50% offer</h3>
+      <a href="shop.html" class="btn">shop now</a>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="/images/rose-aqua-20-tiges.webp" alt="" />
+    <div class="content">
+      <span>limitid sales</span>
+      <h3>25% offer</h3>
+      <a href="shop.html" class="btn">shop now</a>
+    </div>
+  </div>
+
+  <div class="banner">
+    <img src="/images/rose-red-naomi-10-tiges.webp" alt="" />
+    <div class="content">
+      <span>limitid sales</span>
+      <h3>-50% offer</h3>
+      <a href="shop.html" class="btn">shop now</a>
+    </div>
+  </div>
+</section>
+<div style="background-color: antiquewhite; height: 100px; color: red">
+  <%= username %>
+</div>
+
+<!-- footer section start-->
+<%- include("layout/_footer") %>

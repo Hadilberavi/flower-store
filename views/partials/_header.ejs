@@ -1,0 +1,33 @@
+<%- include("_menu") %> <%- include("_loginForm") %> <%- include("_shopCart") %>
+<%- include("_search") %> <% if(typeof error !=='undefined' ){%>
+<div
+  id="error-message"
+  style="
+    text-align: center;
+    position: fixed;
+    top: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 100;
+  "
+>
+  <div
+    style="
+      background-color: #ff0073;
+      color: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      max-width: 50%;
+      margin: auto;
+    "
+  >
+    <span> <%= error %> </span>
+  </div>
+</div>
+<script>
+  setTimeout(() => {
+    document.querySelector("#error-message").remove();
+  }, 3000);
+</script>
+<% }%>

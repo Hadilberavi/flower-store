@@ -1,0 +1,145 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  color: $black;
+  font-family: "Playwrite CU", cursive;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  background-color: $light-bg;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  span {
+    color: #e72463;
+  }
+
+  a {
+    color: $light-color;
+    font-size: 1rem;
+
+    &:hover {
+      color: #e72463;
+    }
+  }
+}
+
+.category {
+  .box-container {
+    @include grid(1rem, 2, 1rem);
+    @include box-styles;
+    padding: 1rem;
+
+    @include mobile {
+      @include grid(1rem, 4, 0);
+    }
+  }
+}
+
+.products {
+  margin-top: 2rem;
+
+  .box-container {
+    display: flex;
+    flex-wrap: wrap; /* Kutu sayısı fazla olduğunda alt satıra geçmesini sağlar */
+    gap: 1rem; /* Kutular arasındaki boşluğu ayarlar */
+    justify-content: center; /* Kutuları yatayda ortalar */
+    padding: 1rem;
+    @include mobile {
+      @include grid(1rem, 2, 1rem);
+    }
+
+    @include tablet {
+      @include grid(1rem, 3, 1.2rem);
+    }
+
+    .box {
+      position: relative;
+      background: $light-bg;
+      height: 400px;
+      overflow: hidden;
+      transition: all 0.5s ease; ///Sayfa ögeleri arasında yumuşak geçişler sağlayabil.
+      border-radius: 1rem;
+      box-shadow: $box-shadow;
+
+
+      .icons {
+        opacity: 0;
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(243, 243, 243, 0.5);
+        gap: 1rem;
+        transition: 0.3s ease all;
+
+        a {
+          height: 4rem;
+          width: 4rem;
+          background: white;
+          box-shadow: $box-shadow;
+          color: $light-color;
+          border-radius: .5rem;
+          display: grid;
+          place-content: center;
+          text-decoration: none;
+          transition: 0.2s ease all;
+
+          &:hover {
+            background: #e72463;
+            color: white;
+          }
+        }
+      }
+
+      .image {
+        img {
+          object-fit: cover;
+            width: 100%;
+        }
+      }
+
+      .content {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 1rem;
+        transition: all 0.3s ease;
+
+        h3 {
+          color: #000000;
+        }
+
+        .price {
+          color: $black;
+          padding: 1rem 0;
+        }
+
+        .stars i {
+          color: #e72463;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      &:hover .icons {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      &:hover .content {
+        bottom: -12rem;
+      }
+
+      &:hover .image {
+        color: #e72463;
+      }
+    }
+  }
+}
