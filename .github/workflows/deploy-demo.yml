@@ -1,0 +1,75 @@
+# Publishes the static demo in demo/ to GitHub Pages.
+# demo/ is generated from views/ and public/ by `npm run demo:build` and committed; this workflow
+# rebuilds it, fails if the committed copy is out of date, and deploys it.
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "demo/**"
+      - "views/**"
+      - "public/**"
+      - "scripts/demo/**"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy-demo.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; never cancel a deployment that is already running.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build demo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate the demo from the EJS views
+        run: npm run demo:build
+
+      - name: Check that the committed demo is up to date
+        run: |
+          if [ -n "$(git status --porcelain -- demo)" ]; then
+            echo "::error::demo/ is out of date. Run 'npm run demo:build' and commit the result."
+            git status --short -- demo
+            exit 1
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload the demo
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: demo
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5

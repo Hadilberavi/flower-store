@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
-    "sass": "sass public/css/main.scss public/css/style.css --watch"
+    "sass": "sass public/css/main.scss public/css/style.css --watch",
+    "demo:build": "node scripts/demo/build.mjs",
+    "demo:serve": "node scripts/demo/build.mjs --serve"
   },
   "keywords": [],
   "author": "",

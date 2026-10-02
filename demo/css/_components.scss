@@ -1,0 +1,343 @@
+@import "_base.scss";
+
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  background: black;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: #e72463;
+    color: white;
+  }
+}
+
+.info-container {
+  @include grid(5rem, 3, 1rem);
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+
+  @include box-styles;
+
+  .info {
+    text-align: center;
+    position: relative;
+    padding: 1rem;
+    img {
+      height: 3rem;
+      transition: transform 0.3s ease;
+    }
+
+    h3 {
+      margin: 1rem 12px;
+      color: #e72463;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      color: #e72463;
+
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.credit {
+  padding: 2rem 53px 30px;
+  text-align: center;
+  background: #e72463;
+  color: #f3f3f3;
+}
+
+.heading {
+  background-size: cover;
+  background: url(../images/breadcrumb.jpg) no-repeat center;
+  text-align: center;
+  padding: 2rem;
+
+  h1 {
+    color: $black;
+  }
+
+  p {
+    color: $light-color;
+    padding: 1rem 0.5rem 1rem 1rem;
+
+    a {
+      color: $black;
+
+      &:hover {
+        color: #e72463;
+      }
+    }
+  }
+}
+
+.scroll-to-top {
+  position: fixed; /* Sabit/çekirdek konum */
+  bottom: 3rem; /* Sayfanın altında yerleştirin */
+  right: 1rem; /* Sağdan 30px yerleştirin */
+  z-index: 99; /* Üst üste gelmemesini sağlayın */
+  background-color: #555; /* Arka plan rengi ayarla */
+  color: white; /* Metin rengi */
+  cursor: pointer; /* Hover'da mouse imlecini değiştir */
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: #e72463; /* Hover'da koyu gri arka plan rengi ekleyin */
+  }
+}
+
+.search-form {
+  position: fixed;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  transition: 0.3s ease-in-out all;
+  padding: 0.5rem;
+
+  @include desktop {
+    left: auto;
+    min-width: 40rem;
+  }
+
+  &.active {
+    top: 5rem;
+  }
+
+  .search-container {
+    border-radius: 0.3rem;
+    display: flex;
+    justify-items: start;
+    align-items: center;
+    box-shadow: $box-shadow;
+    background: white;
+    padding: 0.5rem;
+
+    input {
+      height: 100%;
+      width: 100%;
+      padding: 0 1rem;
+      color: $black;
+      border-radius: 0.5rem 0 0 0.5rem;
+      border: 0;
+    }
+
+    label {
+      padding: 0.5rem;
+      cursor: pointer;
+      color: $light-color;
+      font-size: 1.5rem;
+
+      &:hover::before {
+        color: $green;
+      }
+    }
+  }
+}
+
+.shopping-cart {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  padding: 1rem;
+  background: white;
+  margin: 0.5rem;
+  z-index: 4;
+  transition: 0.2s ease-in-out all;
+  transform: translateX(110%);
+  opacity: 0;
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 350px;
+
+  @include desktop {
+    left: auto;
+  }
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid lightgray;
+
+    .fa-times {
+      padding: 0 1rem;
+      height: 100%;
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    img {
+      height: 8rem;
+      object-fit: contain;
+    }
+
+    .content {
+      h3 {
+        padding-bottom: 0.5rem;
+        color: $black;
+      }
+
+      span {
+        color: $light-color;
+
+        &.multiply {
+          margin: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .total {
+    padding: 2rem 0;
+    color: $light-color;
+    text-align: center;
+
+    span {
+      color: $black;
+    }
+  }
+
+  .btn {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.login-form {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  border-radius: 0.5rem;
+  box-shadow: $box-shadow;
+  padding: 1rem;
+  background: white;
+  margin: 0.5rem;
+  z-index: 4;
+  transition: 0.2s ease-in-out all;
+  transform: translateX(110%);
+  opacity: 0;
+  width: 350px;
+  @include desktop {
+    left: auto;
+  }
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  @include mobile {
+    &.active {
+      right: 0;
+      margin: 0.5rem;
+    }
+  }
+
+  h3 {
+    color: $black;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.7rem;
+  }
+
+  .box {
+    margin: 0.7rem 0;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    color: #222;
+    width: 100%;
+  }
+
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.7rem 0;
+
+    label {
+      color: $light-color;
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    margin: 1rem 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  p {
+    color: $light-color;
+    padding-top: 0.7rem;
+
+    a {
+      color: #e72463;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.notification {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.logo {
+  text-decoration: none;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  font-family: "Playwrite CU", cursive;
+  color: #333;
+  font-weight: bolder;
+  text-wrap: nowrap;
+
+  img {
+    width: 48px;
+    height: auto;
+    position: absolute;
+    left: 193px;
+  }
+  span {
+    font-size: 1.4rem;
+  }
+
+  span:hover {
+    color: #202124;
+  }
+}

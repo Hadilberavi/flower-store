@@ -1,0 +1,56 @@
+@mixin grid($max-width,$columns: 1,$gap : 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax($max-width, 1fr));
+  gap: $gap;
+}
+
+@mixin box-styles {
+  .box {
+    text-align: center;
+    position: relative;
+
+    img {
+      height: 5rem;
+      transition: transform 0.3s ease;
+    }
+
+    h3 {
+      color: $light-color;
+      font-size: 1rem;
+      padding: .5rem;
+    }
+
+    &:hover {
+      color: #e72463;
+
+      img {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+
+// Responsive mixins: Bu mixinler, belirli ekran boyutlarında stiller uygulamak için kullanılır.
+$mobile-width: 576px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+  @media (min-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+

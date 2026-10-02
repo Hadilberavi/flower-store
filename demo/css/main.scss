@@ -1,0 +1,11 @@
+@import "_base.scss";
+@import "_components.scss";
+
+@import "about.scss";
+@import "blog.scss";
+@import "contact.scss";
+@import "index.scss";
+@import "review.scss";
+@import "shop.scss";
+@import "_register.scss";
+//  bu  importlari yaparak tüm SCSS dosyalarını birleştirir ve main.scss üzerinden style.css dosyasına derler.
