@@ -6,8 +6,8 @@
 
 **A server-rendered flower shop built with Node.js, Express, EJS and MongoDB.**
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-open-e72463?style=for-the-badge&logo=githubpages&logoColor=white)](https://hadilberavi.github.io/flower-project-backend/)
-[![Deploy demo](https://img.shields.io/github/actions/workflow/status/Hadilberavi/flower-project-backend/deploy-demo.yml?branch=main&style=for-the-badge&label=deploy)](https://github.com/Hadilberavi/flower-project-backend/actions/workflows/deploy-demo.yml)
+[![Live demo](https://img.shields.io/badge/Live%20demo-open-e72463?style=for-the-badge&logo=githubpages&logoColor=white)](https://hadilberavi.github.io/flower-store-/)
+[![Deploy demo](https://img.shields.io/github/actions/workflow/status/Hadilberavi/flower-store-/deploy-demo.yml?branch=main&style=for-the-badge&label=deploy)](https://github.com/Hadilberavi/flower-store-/actions/workflows/deploy-demo.yml)
 
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white)
@@ -29,7 +29,7 @@
 
 Flower Trend is an online flower shop. Visitors browse 13 bouquets, fill a shopping cart once signed in, create an account and send the shop a message. Every page is rendered on the server with EJS templates. Accounts and contact messages are stored in MongoDB through Mongoose, and sessions through connect-mongo.
 
-**Try it without installing anything:** the [live demo](https://hadilberavi.github.io/flower-project-backend/) is a static copy of the app on GitHub Pages. Sign in with `demo@example.com` / `demo1234`, or register your own account.
+**Try it without installing anything:** the [live demo](https://hadilberavi.github.io/flower-store-/) is a static copy of the app on GitHub Pages. Sign in with `demo@example.com` / `demo1234`, or register your own account.
 
 This is a portfolio project, not a production-ready shop. See [known limitations](#known-limitations) before reusing the code.
 
@@ -100,8 +100,8 @@ This is a portfolio project, not a production-ready shop. See [known limitations
 ### Install and run
 
 ```bash
-git clone https://github.com/Hadilberavi/flower-project-backend.git
-cd flower-project-backend
+git clone https://github.com/Hadilberavi/flower-store-.git
+cd flower-store-
 npm install
 ```
 
@@ -171,7 +171,7 @@ npm run sass
 ## Project structure
 
 ```text
-flower-project-backend/
+flower-store-/
 ├── server.js                    Express app: sessions, static files, routes, MongoDB connection
 ├── db.js                        Connection helper, not used by server.js
 ├── routs/pageRoute.js           Page and form routes
@@ -196,7 +196,7 @@ flower-project-backend/
 
 ## About the live demo
 
-GitHub Pages only serves static files, so the [live demo](https://hadilberavi.github.io/flower-project-backend/) runs the app's backend logic in your browser. Things to know when you try it:
+GitHub Pages only serves static files, so the [live demo](https://hadilberavi.github.io/flower-store-/) runs the app's backend logic in your browser. Things to know when you try it:
 
 - **Accounts.** Sign in with `demo@example.com` / `demo1234`, or register a new account.
 - **Your data.** Accounts and messages stay in your browser's local storage. They never reach a server, and other visitors don't see them. Don't enter a real password. To start over, clear the site data in your browser or run `FlowerDemo.reset()` in the console.
@@ -218,7 +218,7 @@ The files in `demo/` are generated, so never edit them by hand. After changing a
 npm run demo:build
 ```
 
-To rebuild and preview the demo at http://localhost:4173/flower-project-backend/, the same sub-path GitHub Pages uses:
+To rebuild and preview the demo at http://localhost:4173/flower-store-/, the same sub-path GitHub Pages uses:
 
 ```bash
 npm run demo:serve

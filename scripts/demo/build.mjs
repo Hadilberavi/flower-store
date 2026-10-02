@@ -11,7 +11,7 @@
  * placeholder and with real values, fails the build whenever a template change would break that.
  *
  *   npm run demo:build   regenerate demo/ (commit the result)
- *   npm run demo:serve   regenerate, then preview at http://localhost:4173/flower-project-backend/
+ *   npm run demo:serve   regenerate, then preview at http://localhost:4173/flower-store-/
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -28,8 +28,8 @@ const ROUTES_FILE = path.join(ROOT, 'routs/pageRoute.js');
 export const OUT_DIR = path.join(ROOT, 'demo');
 
 /** GitHub Pages serves this project site under https://<owner>.github.io/<repo>/. */
-export const BASE_PATH = '/flower-project-backend/';
-const REPO_URL = 'https://github.com/Hadilberavi/flower-project-backend';
+export const BASE_PATH = '/flower-store-/';
+const REPO_URL = 'https://github.com/Hadilberavi/flower-store-';
 
 /** One entry per GET route in routs/pageRoute.js, with the locals its controller passes. */
 export const PAGES = [

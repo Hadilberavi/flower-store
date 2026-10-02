@@ -19,7 +19,7 @@
 (function () {
   'use strict';
 
-  var BASE = location.pathname.replace(/[^/]*$/, ''); // e.g. "/flower-project-backend/"
+  var BASE = location.pathname.replace(/[^/]*$/, ''); // e.g. "/flower-store-/"
   var KEY = 'flowerTrendDemo:' + BASE + ':'; // every Pages site of an owner shares one origin
   var SESSION_COOKIE = 'ftdemo_sid';
   var DEMO_ACCOUNT = { username: 'demo', email: 'demo@example.com', password: 'demo1234' };
