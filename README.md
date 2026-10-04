@@ -6,7 +6,7 @@
 
 **A server-rendered flower shop built with Node.js, Express, EJS and MongoDB.**
 
-[![Live demo](https://img.shields.io/badge/Live%20demo-open-e72463?style=for-the-badge&logo=githubpages&logoColor=white)](https://hadilberavi.github.io/flower-store-/)
+[![Live demo](https://img.shields.io/badge/Live%20demo-open-e72463?style=for-the-badge&logo=githubpages&logoColor=white)](https://hadilberavi.github.io/flower-store/)
 [![Deploy demo](https://img.shields.io/github/actions/workflow/status/Hadilberavi/flower-store-/deploy-demo.yml?branch=main&style=for-the-badge&label=deploy)](https://github.com/Hadilberavi/flower-store-/actions/workflows/deploy-demo.yml)
 
 ![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?logo=nodedotjs&logoColor=white)
