@@ -29,7 +29,7 @@
 
 Flower Trend is an online flower shop. Visitors browse 13 bouquets, fill a shopping cart once signed in, create an account and send the shop a message. Every page is rendered on the server with EJS templates. Accounts and contact messages are stored in MongoDB through Mongoose, and sessions through connect-mongo.
 
-**Try it without installing anything:** the [live demo](https://hadilberavi.github.io/flower-store-/) is a static copy of the app on GitHub Pages. Sign in with `demo@example.com` / `demo1234`, or register your own account.
+**Try it without installing anything:** the [live demo](https://hadilberavi.github.io/flower-store/) is a static copy of the app on GitHub Pages. Sign in with `demo@example.com` / `demo1234`, or register your own account.
 
 This is a portfolio project, not a production-ready shop. See [known limitations](#known-limitations) before reusing the code.
 
